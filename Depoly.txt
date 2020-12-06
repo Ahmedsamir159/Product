@@ -1,0 +1,11 @@
+servies
+Step 1 Open IIS Manager
+Step 2 Add new Website
+Step 3 Browse and select Published Folder path
+Step 4 publish servies and set output of publish under iis
+UI
+run command 
+change url of servies
+"npm run build -- --prod"
+copy build folder content and put inside iss 
+

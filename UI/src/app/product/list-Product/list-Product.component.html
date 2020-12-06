@@ -1,0 +1,34 @@
+<div class="col-md-9 product-container">
+  <h2 style="margin: auto"> Product Details</h2>
+  <div style="margin: 10px;"> 
+     <button class="btn btn-success" style="width:120px" (click)="addProduct()"> Add Product</button>
+  <button class="btn btn-danger" style="width:100px ;margin-left: 10px;" (click)="export()"> Export </button>
+  <button class="btn btn-success" style="width:80px ;margin: 10px;" (click)="search()"> Search </button>
+    <input type="text"  formControlName="Serachkey" #myInput (change)="search()" name="Serachkey" id="Serachkey" >
+
+</div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Name</th>
+      <td>Photo</td>
+      
+      <th>Price</th>
+      <th>LastUpdated</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let product of products; let i=index ">
+      <td class="hidden">{{i+1}}</td>
+      <td>{{product.Name}}</td>
+      <img width="50px" height="50px" src="http://localhost:60310/image/{{product.Photo}}" />
+      <td>{{product.Price}}</td>
+      <td>{{product.LastUpdated  | date:'M/d/yyyy'}}</td>
+      <td><button class="btn btn-danger" (click)="deleteProduct(product)"> Delete</button>
+        <button class="btn btn-success" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
